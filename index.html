@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@800,0.5&display=swap');
+
+ /* Definição da classe font-geologica */
+ .font-geologica {
+ font-family: "Geologica", serif;
+ font-optical-sizing: auto;
+ font-weight: 800;
+ font-style: normal;
+ font-variation-settings:
+ "slnt" 0,
+ "CRSV" 0.5,
+ "SHRP" 0;
+ }
+
+ h1 {
+ font-family: "Geologica", serif;
+ font-optical-sizing: auto;
+ font-weight: 800;
+ font-size: 48px; /* Tamanho da fonte aumentado */
+ font-style: normal;
+ font-variation-settings:
+ "slnt" 0,
+ "CRSV" 0.5,
+ "SHRP" 0;
+ color: #ffffff; /* Adicionado para garantir que o texto seja visível */
+ }
+ </style>
+ <link rel="icon" href="E (3) (1).png" type="image/png">
+ <title>EloDynamos</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ color: #ffffff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ cursor: url('cursor.png'), auto;
+ margin: 0;
+ padding: 0;
+ background-color: #000; /* Fundo preto para o body */
+ }
+
+ .nav {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.7);
+ color: #ffffff;
+ font-size: 18px;
+ padding: 10px 0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ z-index: 1000;
+ }
+
+ .nav img {
+ height: 60px;
+ margin-left: 20px;
+ }
+
+ .nav .logo-text {
+ color: #FFA500;
+ font-size: 24px;
+ margin-left: 10px;
+ }
+
+ .nav div {
+ display: flex;
+ margin-right: 20px;
+ }
+
+ .nav a {
+ color: #ffffff;
+ text-decoration: none;
+ padding: 5px 15px;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .nav a:hover {
+ background-color: #5250e6;
+ color: #000000;
+ border-radius: 5px;
+ }
+
+ @media (max-width: 800px) {
+ .nav {
+ flex-direction: row;
+ justify-content: space-between;
+ }
+
+ .nav img {
+ margin-left: 2px;
+ }
+
+ .nav .logo-text {
+ font-size: 20px;
+ }
+
+ .nav div {
+ margin-right: -3px;
+ }
+
+ .nav a {
+ padding: 2px 8px;
+ }
+ }
+
+ @media (max-width: 480px) {
+ .nav .logo-text {
+ font-size: 18px;
+ margin-left: -5px;
+ }
+
+ .nav a {
+ padding: 3px 3px;
+ }
+ }
+
+ .inicio-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: calc(100vh - 60px);
+ background-image: url('samira gif.gif'); /* Substitua pelo caminho do novo GIF */
+ background-size: cover; /* Mantém o GIF cobrindo todo o contêiner */
+ background-position: center; /* Centraliza o GIF */
+ background-repeat: no-repeat; /* Evita repetição do GIF */
+ width: 100%;
+ padding-top: 60px;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .servicos-container {
+ background-color: #0e0e16;
+ flex-direction: column;
+ padding: 20px;
+ width: 100%;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .form {
+ background-color: #09296d;
+ border-radius: 10px;
+ color: #000000;
+ text-align: center;
+ width: 75%;
+ margin: 10px 0;
+ padding: 40px;
+ box-sizing: border-box;
+ transition: background-color 0.3s;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .form img {
+ max-width: 100%;
+ height: auto;
+ margin: 20px auto;
+ display: block;
+ cursor: url('cursor.png'), auto;
+ }
+
+ h2 {
+ font-family: "Anton", serif;
+ font-weight: 800;
+ font-style: normal;
+ text-shadow: rgba(60, 0, 255, 0.9) 0px 0px 40px;
+ }
+
+ h3 {
+ font-family: "Anton", serif;
+ font-weight: 800;
+ font-style: normal;
+ }
+ 
+ select {
+ margin: 10px 0;
+ padding: 10px;
+ border-radius: 5px;
+ width: 100%;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .servicos-container{
+ background-color: black;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .service-card {
+ background-color: #1a1a1a;
+ border-radius: 10px;
+ color: #ffffff;
+ text-align: center;
+ width: 300px;
+ padding: 20px;
+ margin: 10px;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .service-card img {
+ max-width: 100px;
+ height: auto;
+ display: block;
+ margin: 0 auto;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .service-card h2 {
+ font-size: 1.5em;
+ margin: 10px 0;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .service-card p {
+ margin-bottom: 10px; /* Espaçamento entre o texto e o botão */
+ cursor: url('cursor.png'), auto;
+ }
+
+ .service-card button {
+ background: linear-gradient(to right, #fbbf24, #f59e0b);
+ color: #000000;
+ font-weight: bold;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: url('cursor.png'), auto;
+ transition: background 0.3s;
+ }
+
+ .service-card button:hover {
+ background: linear-gradient(to right, #f59e0b, #fbbf24);
+ }
+
+ .service-cards-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin-top: 20px;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .stats-container {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ padding: 20px;
+ width: 100%;
+ margin-top: 20px;
+ }
+
+ .stats-card {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ color: #ffffff;
+ margin-top: 20px;
+ }
+
+ .stats-card img {
+ width: 80px;
+ height: 80px;
+ margin-bottom: 10px;
+ }
+
+ .contato-container img {
+ width: 300px;
+ height: auto;
+ margin-left: 20px;
+ cursor: url('cursor.png'), auto;
+ }
+
+ .card {
+ position: relative;
+ width: 700px;
+ height: 200px;
+ background: #f5f5f5;
+ border-radius: 10px;
+ padding: 20px;
+ overflow: hidden;
+ }
+
+ .custom-cursor {
+  cursor: url('cursor.png'), auto;
+}
+
+ img.latest {
+ position: absolute;
+ top: -70px;
+ right: -20px;
+ height: 20px;
+ width: auto;
+ transition: transform 0.3s ease-in-out;
+ z-index: 10;
+ clip-path: inset(0px 0px 5px 0px); /* Corta 5px da parte inferior */
+ }
+
+ img.latest:hover {
+ transform: scale(1.1) translate(5px, -5px);
+ }
+
+ /* Estilo para o pop-up de promoção relâmpago */
+ .popup-promocao {
+ display: none; /* Inicialmente oculto */
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 400px;
+ padding: 20px;
+ background-color: rgba(0, 0, 0, 0.9);
+ border-radius: 10px;
+ z-index: 1000;
+ text-align: center;
+ color: white;
+ }
+
+ .popup-promocao img {
+ width: 100%;
+ height: auto;
+ border-radius: 10px;
+ margin-bottom: 15px;
+ }
+
+ .popup-promocao h1 {
+ font-size: 24px;
+ color: #fbbf24;
+ margin-bottom: 10px;
+ }
+
+ .popup-promocao h2 {
+ font-size: 36px;
+ color: #fbbf24;
+ margin-bottom: 10px;
+ }
+
+ .popup-promocao p {
+ font-size: 16px;
+ margin-bottom: 15px;
+ }
+
+ .popup-promocao button {
+ background-color: #fbbf24;
+ color: #000;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: url('cursor.png'), auto;
+ font-weight: bold;
+ }
+
+ .popup-promocao button:hover {
+ background-color: #f59e0b;
+ }
+
+ /* Botão de fechar (X) */
+ .fechar-popup {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ width: 30px;
+ height: 30px;
+ background-color: #fbbf24; /* Fundo amarelo */
+ border-radius: 50%; /* Formato de bola */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ color: #000; /* Cor do X */
+ font-weight: bold;
+ font-size: 18px;
+ border: none;
+ }
+
+ .fechar-popup:hover {
+ background-color: #f59e0b; /* Cor ao passar o mouse */
+ }
+
+
+ /* Responsividade para dispositivos móveis */
+ @media (max-width: 768px) {
+ .stats-container {
+ flex-wrap: wrap; /* Permite que os boosters quebrem para a próxima linha */
+ gap: 20px; /* Adiciona espaçamento entre os boosters */
+ justify-content: center; /* Centraliza os boosters */
+ }
+
+ .stats-card {
+ flex: 1 1 45%; /* Define o tamanho dos boosters para ocupar quase metade da largura */
+ max-width: 45%; /* Limita a largura máxima para evitar que fiquem muito grandes */
+ }
+
+ .popup-promocao {
+ width: 90%; /* Ajusta a largura do pop-up para dispositivos móveis */
+ }
+ }
+ </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promoção Relâmpago</title>
+    </head>
+    <body>
+        <!-- Pop-up de promoção relâmpago -->
+        <div id="popupPromocao" class="popup-promocao">
+            <!-- Botão de fechar (X) -->
+            <button class="fechar-popup" id="fecharPopupX">×</button>
+            <img src="Rell_20.jpg" alt="Imagem de fundo do pop-up" />
+            <h1>PROMOÇÃO RELÂMPAGO</h1>
+            <h2>20% OFF</h2>
+            <p>
+                Use o cupom <span style="font-weight: bold; color: #fbbf24;">DYNAMOS20</span> e garanta 20% de desconto em qualquer um de nossos serviços.
+                <span style="font-weight: bold;">É POR TEMPO LIMITADO!</span>
+            </p>
+            <button id="fecharPromocao">APROVEITE</button>
+        </div>
+    
+        <!-- Restante do conteúdo da página -->
+        <div class="nav">
+            <div style="display: flex; align-items: center;">
+                <img alt="Logo" src="logo4 (1).png" /> <!-- Substitua pela URL da sua logo -->
+                <span class="logo-text">EloDynamos</span> <!-- Texto ao lado da logo -->
+            </div>
+            <div>
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    
+        <div class="inicio-container" id="inicio">
+            <div class="brilho-estrelado"></div> <!-- Camada de brilho estrelado -->
+            <h1>O MELHOR ELOJOB</h1>
+            <h1>PELO MELHOR PREÇO</h1>
+            <h1>Utilize o cupom >DYNAMOS20< para um adicional de 20% de desconto</h1>
+        </div>
+    
+        <div class="servicos-container" id="servicos">
+            <div class="service-cards-container">
+                <!-- DUOJOB Card -->
+                <div class="service-card">
+                    <img alt="Imagem do DUOJOB" src="Mestre.webp" />
+                    <h2>DUOJOB</h2>
+                    <p>Jogue ao lado de um jogador de alto nível até alcançar o elo desejado.</p>
+                    <a href="https://www.seusite.com/orcamento-duojob" class="bg-yellow-500 text-black font-bold py-2 px-4 rounded transition duration-300 hover:bg-yellow-600 custom-cursor">FAZER ORÇAMENTO</a>
+                </div>
+                <!-- ELOJOB Card -->
+                <div class="service-card">
+                    <img alt="Imagem do ELOJOB" src="Desafiante.webp" />
+                    <h2>ELOJOB</h2>
+                    <p>Um jogador de alto nível irá jogar em sua conta e garantir o elo desejado de forma rápida.</p>
+                    <a href="https://www.seusite.com/orcamento-elojob" class="bg-yellow-500 text-black font-bold py-2 px-4 rounded transition duration-300 hover:bg-yellow-600 custom-cursor">FAZER ORÇAMENTO</a>
+                </div>
+                <!-- MD5 Card -->
+                <div class="service-card">
+                    <img alt="Imagem do MD5" src="Graomestre.webp" />
+                    <h2>MD5</h2>
+                    <p>Nós iremos maximizar as chances de você cair em um elo melhor do que o seu anterior em sua MD5.</p>
+                    <a href="https://www.seusite.com/orcamento-md5" class="bg-yellow-500 text-black font-bold py-2 px-4 rounded transition duration-300 hover:bg-yellow-600 custom-cursor">FAZER ORÇAMENTO</a>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            // Exibe o pop-up de promoção ao carregar a página
+            window.onload = function () {
+                document.getElementById('popupPromocao').style.display = 'block';
+            };
+    
+            // Fecha o pop-up de promoção e rola suavemente para a seção de serviços ao clicar no botão "APROVEITE"
+            document.getElementById('fecharPromocao').addEventListener('click', function () {
+                document.getElementById('popupPromocao').style.display = 'none'; // Fecha o pop-up
+                document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção de serviços
+            });
+    
+            // Fecha o pop-up de promoção ao clicar no botão "X"
+            document.getElementById('fecharPopupX').addEventListener('click', function () {
+                document.getElementById('popupPromocao').style.display = 'none';
+            });
+    
+            // Fecha o pop-up de promoção ao clicar fora dele
+            window.addEventListener('click', function (event) {
+                const popupPromocao = document.getElementById('popupPromocao');
+                if (event.target === popupPromocao) {
+                    popupPromocao.style.display = 'none';
+                }
+            });
+        </script>
+ 
+ <style>
+ .custom-cursor {
+     cursor: url('cursor.png'), auto;
+ }
+ 
+ <div class="stats-container">
+ <!-- Atendimento Finalizados -->
+ <div class="stats-card">
+ <img src="mensagem.png" alt="Atendimentos Finalizados">
+ <div class="text-4xl font-bold">10K+</div>
+ <div class="text-yellow-500">ATENDIMENTOS FINALIZADOS</div>
+ </div>
+ <!-- Boosters Online -->
+ <div class="stats-card">
+ <img src="pessoa.png" alt="Boosters Online">
+ <div class="text-4xl font-bold">30</div>
+ <div class="text-yellow-500">BOOSTERS ONLINE</div>
+ </div>
+ <!-- Anos de Experiência -->
+ <div class="stats-card">
+ <img src="star.png" alt="Anos de Experiência">
+ <div class="text-4xl font-bold">5</div>
+ <div class="text-yellow-500">ANOS DE EXPERIÊNCIA</div>
+ </div>
+ <!-- Taxa de Banimento -->
+ <div class="stats-card">
+ <img src="x.png" alt="Taxa de Banimento">
+ <div class="text-4xl font-bold">0%</div>
+ <div class="text-yellow-500">TAXA DE BANIMENTO</div>
+ </div>
+ </div>
+ </div>
+
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-black text-white">
+ <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center">
+ <div class="w-full md:w-1/2 flex justify-center md:justify-start">
+ <img alt="A futuristic character with vibrant colors and a dynamic pose" class="w-full max-w-md" height="600" src="videoframe_38466.png" width="600"/>
+ </div>
+ <div class="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8">
+ <h2 class="text-3xl font-bold mb-6">
+ VANTAGENS PRIME
+ </h2>
+ <div class="mb-6 flex items-start">
+ <div class="bg-yellow-500 p-4 rounded-full mr-4">
+ <i class="fas fa-tags text-black text-2xl"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-semibold">
+ VALORES MAIS ACESSÍVEIS
+ </h3>
+ <p class="mt-2">
+ Na ELOJOB PRIME você tem os preços mais acessíveis com a qualidade de sempre que oferecemos. Ao longo de 5 anos concluímos mais de 10mil serviços, com um feedback positivo superior a 95%.
+ </p>
+ </div>
+ </div>
+ <div class="mb-6 flex items-start">
+ <div class="bg-yellow-500 p-4 rounded-full mr-4">
+ <i class="fas fa-clock text-black text-2xl"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-semibold">
+ ENTREGA RÁPIDA
+ </h3>
+ <p class="mt-2">
+ Em toda a existência da ELOJOB PRIME, 80% dos serviços contratados foram entregues na metade do tempo que foi combinado. Trabalhamos com os melhores boosters, para garantir que o serviço vai ser executado com maior eficiência.
+ </p>
+ </div>
+ </div>
+ <div class="flex items-start">
+ <div class="bg-yellow-500 p-4 rounded-full mr-4">
+ <i class="fas fa-handshake text-black text-2xl"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-semibold">
+ TRANSPARÊNCIA
+ </h3>
+ <p class="mt-2">
+ Nos serviços solo/duo você poderá assistir GRATUITAMENTE a todas as partidas ao vivo em Sala Privada no discord, tendo transparência do serviço que está sendo executado.
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+ <div class="contato-container" id="contato">
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Discord - Vantagens Prime</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ <style>
+ @media (max-width: 480px) {
+ .contato-card {
+ width: 100%; /* Aumentando a largura do card para 120% */
+ max-width: 100%; /* Garantindo que não ultrapasse a largura da tela */
+ height: auto;
+ padding: 1rem;
+ flex-direction: column; /* Garantir que os elementos fiquem empilhados */
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ left: -55%;
+ }
+ .contato-card img {
+ width: 70%;
+ max-width: 350px;
+ margin-top: 1rem;
+ position: absolute;
+ top: -25%;
+ right: -40;
+ transform: translateX(25%) translateY(-25%);
+ }
+ .text-white {
+ text-align: center;
+ margin-bottom: 1rem;
+ }
+ }
+ </style>
+ </head>
+ <body class="bg-black text-white font-sans">
+ 
+  <div class="contato-container" id="contato">
+    <div class="flex items-center justify-center min-h-screen px-4">
+      <div class="contato-card relative bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg p-8 flex items-center space-x-8 w-[405px] h-[400px] shadow-lg">
+        <!-- Texto -->
+        <div class="text-white z-10 max-w-md">
+          <h1 class="text-3xl font-bold mb-4">PARTICIPE DO DISCORD</h1>
+          <p class="mb-4 text-sm leading-relaxed text-justify">
+            Acesse nosso Discord e confira o feedback de nossos clientes, participe de sorteios, 
+            assista às transmissões, 
+            e participe da nossa comunidade.
+          </p>
+          <a href="https://discord.gg/9n8wWYE2wd" target="_blank" rel="noopener noreferrer">
+                <button class="bg-white text-black font-bold py-2 px-4 rounded-full flex items-center space-x-2 shadow-md custom-cursor">
+                  <i class="fab fa-discord"></i>
+                  <span>DISCORD</span>
+                </button>
+              </a>
+        </div>
+  
+ <!-- Imagem -->
+ <img src="latest (1).png" alt="Imagem de um personagem de jogo com fundo amarelo" class="absolute top-0 right-0 w-[500px] transform translate-x-1/4 -translate-y-1/4">
+ </div>
+ </div>
+ </div>
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            cursor: url('cursor.png'), auto;
+        }
+        .cursor-pointer {
+            cursor: url('cursor.png'), pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">PERGUNTAS FREQUENTES</h1>
+        
+        <!-- Pergunta 1 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer1')">
+                <h2 class="text-lg font-semibold">O que é Elojob?</h2>
+                <i class="fas fa-chevron-down" id="icon1"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer1">
+                <p class="text-justify">O Elojob é um serviço oferecido por um de nossos jogadores profissionais altamente qualificados de League of Legends para ajudar outros jogadores a subirem de elo dentro do jogo.</p>
+                <p class="mt-2 text-justify">Muitas vezes, jogadores que querem melhorar suas habilidades ou alcançar ranques mais altos, como Platina, Esmeralda, Diamante ou até mesmo Mestre, recorrem ao Elojob para acelerar esse processo.</p>
+            </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer2')">
+                <h2 class="text-lg font-semibold">Como funciona o Elojob no EloDynamos?</h2>
+                <i class="fas fa-chevron-down" id="icon2"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer2">
+                <p class="text-justify">Na EloDynamos, oferecemos um serviço seguro e confidencial, feito por jogadores qualificados. Garantimos resultados rápidos, respeitando as políticas do League of Legends, sem o uso de práticas ilegais e com total discrição para proteger sua conta. Vamos jogar na sua conta até alcançar a divisão desejada sem que você precise se estressar.</p>
+                <p class="mt-2 font-bold text-yellow-400 text-justify">DUO BOOST</p>
+                <p class="text-justify">Se você prefere não compartilhar os dados da sua conta, oferecemos a modalidade "Duo Boost". Nessa opção, você jogará em dupla com um de nossos jogadores de alto nível, permitindo que você aprenda e melhore suas habilidades enquanto sobe de elo ao mesmo tempo.</p>
+            </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer3')">
+                <h2 class="text-lg font-semibold">O EloDynamos é seguro/confiável?</h2>
+                <i class="fas fa-chevron-down" id="icon3"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer3">
+                <p class="mb-2 text-justify">Com 5 anos no mercado e mais de 10 mil serviços finalizados, a empresa recebeu apenas avaliações positivas, refletindo nossa honestidade, profissionalismo e comprometimento com a missão de proporcionar uma experiência confiável aos nossos clientes.</p>
+                <p class="text-justify">Você pode acessar nosso <span class="text-yellow-400 font-semibold">DISCORD</span> e conferir todos os serviços que concluímos, juntamente com o feedback do cliente que contratou o serviço.</p>
+            </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer4')">
+                <h2 class="text-lg font-semibold">Há risco de banimento fazendo elojob?</h2>
+                <i class="fas fa-chevron-down" id="icon4"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer4">
+                <p class="text-justify">Não há risco de banimentos. Utilizamos todas as medidas necessárias para minimizar os riscos. Em toda a história da ELOJOB PRIME nunca ocorreu nenhuma punição.</p>
+                <ul class="list-disc list-inside mt-2 text-justify">
+                    <li>Utilizamos Chat Offline (Nenhum amigo na lista verá que você está online).</li>
+                    <li>Posição dos Feitiços (Jogamos com as mesmas configurações que você usa).</li>
+                    <li>Personalização de Rotas e Campeões (Jogamos com os campeões e na rota que você joga).</li>
+                    <li>Restrição de Horário (Você pode escolher os horários que deseja que joguemos).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer5')">
+                <h2 class="text-lg font-semibold">Como funciona o pagamento?</h2>
+                <i class="fas fa-chevron-down" id="icon5"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer5">
+                <p class="text-justify">O pagamento poderá ser feito através de Pix, Boleto, PicPay, Mercado Pago ou Transferência Bancária.</p>
+            </div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="mb-4">
+            <div class="bg-gray-800 text-white p-4 rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleAnswer('answer6')">
+                <h2 class="text-lg font-semibold">Como sei que minha conta não será roubada?</h2>
+                <i class="fas fa-chevron-down" id="icon6"></i>
+            </div>
+            <div class="bg-gray-700 text-white p-4 rounded-b-lg hidden" id="answer6">
+                <p class="text-justify">Para alterar a senha da sua conta, é necessário um código de segurança enviado ao seu e-mail pela Riot Games. Como não temos acesso a essa informação, não é possível roubar sua conta.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            answer.classList.toggle("hidden");
+        }
+    </script>
+
+ <html>
+ <head>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-black text-white">
+ <footer class="py-8">
+ <div class="container mx-auto text-center">
+ <div class="flex justify-center items-center mb-4">
+ <span class="text-2xl font-bold text-yellow-500">
+ ELO
+ <span class="text-yellow-600">DYNAMOS</span>
+ </span>
+ </div>
+ <p class="text-sm mb-4 text-justify">
+ League of Legends é uma marca registrada da Riot Games, Inc. Nós não somos de nenhuma forma afiliados, associados ou endossados pela Riot Games, Inc. Todos os direitos autorais, marcas imagens e marcas de serviço pertencem a seus respectivos proprietários.
+ </p>
+ <center><img src="E (2).png"</center>
+ <hr class="border-gray-700 mb-4"/>
+ <p class="text-sm">© 2019 - 2025 COPYRIGHT ELODYNAMOS</p>
+ </div>
+ </footer>
+ </body>
+ </html>
+ 
